@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borde Neón</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+  }
+
+  .neon-box {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+    color: #fff;
+    position: relative;
+    border: 5px solid transparent;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .neon-box::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+    z-index: -1;
+    border-radius: 15px;
+    filter: blur(15px);
+  }
+
+  .typing-text {
+    display: block; /* Cambiar de inline-block a block */
+    white-space: normal; /* Eliminar el desbordamiento del texto */
+    border-right: none; /* Eliminar el borde derecho */
+  }
+
+  /* Responsividad */
+  @media screen and (max-width: 768px) {
+    .neon-box {
+      padding: 20px;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .neon-box {
+      padding: 15px;
+      font-size: 16px;
+    }
+
+    .typing-text {
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="neon-box">
+    <p class="typing-text">Hoy la distancia se siente un poco más, pero no importa cuántos kilómetros nos separen, porque mi corazón sigue latiendo al ritmo del tuyo. Te extraño con cada amanecer, con cada estrella que brilla en el cielo, con cada suspiro que escapa cuando pienso en ti.</p>
+    <p class="typing-text">A veces cierro los ojos y me imagino a tu lado, riendo juntos, tomados de la mano, sintiendo tu abrazo que siempre me hace sentir en casa. Porque eso eres para mí: mi hogar, mi refugio, mi paz. La distancia no es más que un número en un mapa, pero nuestro amor es infinito, más grande que cualquier barrera, más fuerte que cualquier obstáculo.</p>
+    <p class="typing-text">Cada día que pasa es un día menos para volver a verte, para sentir tu piel, para perderme en tu mirada y decirte en persona cuánto te amo. Hasta entonces, seguiré contando las horas, soñando contigo y esperando el momento en que nuestros caminos vuelvan a cruzarse.</p>
+    <p class="typing-text">No importa la distancia, siempre estamos juntos en el corazón. Te amo hoy, mañana y siempre.</p>
+    <p class="typing-text"><strong>Con todo mi amor, no lo olvides TE AMO atentamente: Kelly Esvenka</strong></p>
+  </div>
+</body>
+</html>
+
+

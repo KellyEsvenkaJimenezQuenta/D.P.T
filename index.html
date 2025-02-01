@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PA MI AMORCITO D.P.T.</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    position: relative;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2vw; /* responsive font size */
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+
+  #moveButton2, #moveButton3, #moveButton4 {
+    display: none;
+  }
+
+  /* Media query for small screens */
+  @media (max-width: 600px) {
+    .button {
+      font-size: 4vw; /* larger buttons on smaller screens */
+      padding: 12px 24px;
+    }
+  }
+
+  /* Media query for larger screens */
+  @media (min-width: 1200px) {
+    .button {
+      font-size: 1.5vw; /* smaller buttons on larger screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+<button id="moveButton" class="button">Apreta aquí Deymar</button>
+<button id="moveButton2" class="button">Jajaja no puedes apretar el botón</button>
+<button id="moveButton3" class="button">Ya pues amor mi abuela es más rápida</button>
+<button id="moveButton4" class="button">¡Jajaja!</button>
+
+<script>
+  const button = document.getElementById('moveButton');
+  const buttonWidth = button.offsetWidth;
+  const buttonHeight = button.offsetHeight;
+  let buttonClicked = false;
+
+  const moveButtonInterval = setInterval(moveButton, 1000);
+
+  function moveButton() {
+    if (!buttonClicked) {
+      const randomX = Math.random() * (window.innerWidth - buttonWidth);
+      const randomY = Math.random() * (window.innerHeight - buttonHeight);
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+    }
+  }
+
+  button.addEventListener('click', redirectToHeartPage);
+
+  function redirectToHeartPage() {
+    buttonClicked = true;
+    clearInterval(moveButtonInterval);
+    window.location.href = 'corazon.html';
+  }
+
+  setTimeout(showSecondButton, 3000);
+
+  function showSecondButton() {
+    const button2 = document.getElementById('moveButton2');
+    button2.style.display = 'block';
+    setInterval(moveButton2, 1000);
+  }
+
+  function moveButton2() {
+    const button2 = document.getElementById('moveButton2');
+    const randomX2 = Math.random() * (window.innerWidth - button2.offsetWidth);
+    const randomY2 = Math.random() * (window.innerHeight - button2.offsetHeight);
+    button2.style.left = `${randomX2}px`;
+    button2.style.top = `${randomY2}px`;
+  }
+
+  setTimeout(showThirdButton, 6000);
+
+  function showThirdButton() {
+    const button3 = document.getElementById('moveButton3');
+    button3.style.display = 'block';
+    setInterval(moveButton3, 1000);
+  }
+
+  function moveButton3() {
+    const button3 = document.getElementById('moveButton3');
+    const randomX3 = Math.random() * (window.innerWidth - button3.offsetWidth);
+    const randomY3 = Math.random() * (window.innerHeight - button3.offsetHeight);
+    button3.style.left = `${randomX3}px`;
+    button3.style.top = `${randomY3}px`;
+  }
+
+  setTimeout(showFourthButton, 9000);
+
+  function showFourthButton() {
+    const button4 = document.getElementById('moveButton4');
+    button4.style.display = 'block';
+    setInterval(moveButton4, 1000);
+  }
+
+  function moveButton4() {
+    const button4 = document.getElementById('moveButton4');
+    const randomX4 = Math.random() * (window.innerWidth - button4.offsetWidth);
+    const randomY4 = Math.random() * (window.innerHeight - button4.offsetHeight);
+    button4.style.left = `${randomX4}px`;
+    button4.style.top = `${randomY4}px`;
+  }
+</script>
+
+</body>
+</html>
